@@ -806,6 +806,16 @@ export class AppComponent implements OnInit, OnDestroy {
           this.headerClass = 'sub-header-with-menu';
           break;
         }
+        case '/onboarding-partner/merchant': {
+          this.clearFlag();
+          this.title = '/ Partner';
+          this.breadcrumbs.topLink = '/partners';
+          this.breadcrumbs.topTitle = 'Onboarding ';
+          this.backFlag = true;
+          this.backLink = '/partners';
+          this.headerClass = 'sub-header-with-menu';
+          break;
+        }
 
         //users
         case '/users': {

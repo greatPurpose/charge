@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { EventEmitter, Component, OnInit, Input, Output } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
 
 @Component({
   selector: 'app-sub-header',
@@ -8,8 +10,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SubHeaderComponent implements OnInit {
   @Input() innerMenuItems: Array<string>;
   @Input() light: boolean = false;
+  @Output() openDialgEmit = new EventEmitter();
 
-  constructor() {}
+  selStr: string;
 
+  constructor() { }
+  
   ngOnInit() {}
+
+  openDialog(componentName):void {
+    console.log(componentName);
+    this.openDialgEmit.emit(componentName);
+  }
+
 }

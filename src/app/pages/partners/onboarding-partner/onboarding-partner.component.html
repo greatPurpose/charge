@@ -22,7 +22,10 @@
       </div>
     </div>
     <app-sub-header [light]="true"
-      [innerMenuItems]="partnerInnerMenu"></app-sub-header>
+      [innerMenuItems]="partnerInnerMenu"
+      (openDialgEmit)="openMerchantDialog($event)">      
+    </app-sub-header>   
+    
   </div>
 </div>
 <router-outlet></router-outlet>

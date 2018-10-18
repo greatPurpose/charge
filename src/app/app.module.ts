@@ -188,6 +188,7 @@ import { OnboardingPartnerComponent } from './pages/partners/onboarding-partner/
 import { OnboardingPartnerDetailsComponent } from './pages/partners/onboarding-partner/onboarding-partner-details/onboarding-partner-details.component';
 import { OnboardingPartnerClientsComponent } from './pages/partners/onboarding-partner/onboarding-partner-clients/onboarding-partner-clients.component';
 import { OnboardingPartnerReportsComponent } from './pages/partners/onboarding-partner/onboarding-partner-reports/onboarding-partner-reports.component';
+import { OnboardingPartnerMerchantComponent } from './pages/partners/onboarding-partner/onboarding-partner-merchant/onboarding-partner-merchant.component';
 import { PartnerActivityComponent } from './pages/partners/partner/partner-activity/partner-activity.component';
 import { BillingClientComponent } from './pages/billing-client/billing-client.component';
 import { BillingSummaryComponent } from './pages/billing-client/billing-summary/billing-summary.component';
@@ -239,6 +240,7 @@ import { ReportWidgetComponent } from './pages/dashboard/widget-page/report-widg
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { DialogService, ConfirmationDialogComponent, MessageDialogComponent } from './services/dialog.service';
 import { RoleService } from './services/data/role.service';
+import { CompanyListService } from './services/data/companylist.service';
 import { CompanyService } from './services/data/company.service';
 import { UserService } from './services/data/user.service';
 import { UserType } from './models/user';
@@ -320,7 +322,8 @@ const innerPartner: Routes = [
 const innerOnboardingPartner: Routes = [
   { path: 'details', component: OnboardingPartnerDetailsComponent },
   { path: 'clients', component: OnboardingPartnerClientsComponent },
-  { path: 'reports', component: OnboardingPartnerReportsComponent }
+  { path: 'reports', component: OnboardingPartnerReportsComponent },
+  { path: 'merchant', component: OnboardingPartnerMerchantComponent }
 ];
 
 const innerCompany: Routes = [
@@ -570,6 +573,7 @@ const appRoutes: Routes = [
     OnboardingPartnerDetailsComponent,
     OnboardingPartnerClientsComponent,
     OnboardingPartnerReportsComponent,
+    OnboardingPartnerMerchantComponent,
     PartnerActivityComponent,
     BillingClientComponent,
     BillingSummaryComponent,
@@ -650,6 +654,7 @@ const appRoutes: Routes = [
     ProfileResolver,
     RoleService,
     UserService,
+    CompanyListService,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     {
       provide: PERFECT_SCROLLBAR_CONFIG,

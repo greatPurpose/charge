@@ -1,0 +1,34 @@
+ <div class="col-4">
+        <fieldset class="form-section">
+          <div class="form-title">
+            <h3>Merchant</h3>
+            <div class="right-item">
+              <button class="addButton"
+                disabled="{{merchantFlag}}"
+                mat-icon-button
+                (click)="openDialog('merchants')">
+                <i class="material-icons">add_circle</i>
+              </button>
+            </div>
+          </div>
+          <ul *ngIf="merchantFlag"
+            class="checking-list">
+            <li class="line-item"
+              *ngFor="let item of merchantsList"
+              [hidden]="!item.included"
+              [ngClass]="item.active?'active':''">
+              <div class="left-item"
+                (click)="acviveMerchantFunction(item)">
+                <span class="data">{{item.name}}</span>
+              </div>
+              <div class="right-item">
+                <button mat-icon-button
+                  class="standard"
+                  (click)="removeMerchantItem(item)">
+                  <i class="material-icons">close</i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </fieldset>
+      </div>

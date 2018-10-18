@@ -4,8 +4,9 @@
     <a mat-tab-link
       [ngClass]="''+(light? ' light': '') + (item.icon? ' with-icon': '')"
       *ngFor="let item of innerMenuItems"
+      (click) = "item.event==undefined? '' : openDialog(item.event)"
       [routerLink]="item.path"
-      routerLinkActive
+      routerLinkActive 
       #rla="routerLinkActive"
       [active]="rla.isActive">
       {{item.name}}

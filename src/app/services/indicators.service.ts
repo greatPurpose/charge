@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+//import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class IndicatorsService {
@@ -18,7 +19,13 @@ export class IndicatorsService {
     reportsIndicator: ''
   };
   private indicators = new Subject<any>();
+/*
+  constructor(private http: HttpClient) { }
 
+  list(){
+    return this.http.get('assets/data/companyList.json');
+  };
+*/
   indicator$ = this.indicators.asObservable();
   //  val -> 'true' or 'error'
   setDetailsIndicator = (val: string) => {
